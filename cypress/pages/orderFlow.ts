@@ -4,7 +4,8 @@ class OrderFlow {
     allDepartmentDropdown: string = '[id="searchDropdownBox"]';
     mainSearchInput: string ='input[id="twotabsearchtextbox"]';
     mainSearchIcon: string = 'input[id="nav-search-submit-button"]';
-    searchItemsResult: any ='//span[contains(text(), "Fresh Brand - All Butter Mini Croissants")]'; //change text to $
+    //searchItemsResult: any ='//span[contains(text(), "Mini Croissants")]';
+    searchItemsResult: string = 'h2[class="a-size-mini a-spacing-none a-color-base s-line-clamp-3"]';
     amazonFreshLogo: string = '[alt*="Amazon Fresh Logo"]';
     inStockLabel: string ='//span[contains(text(), "In Stock")]';
     learnMoreLink: string ='a[href="https://www.amazon.com/fmc/learn-more"]'
@@ -20,6 +21,7 @@ class OrderFlow {
     OrderFlowFromMainDropdown(item:string) : void {
         cy.get(this.allDepartmentDropdown).select('search-alias=amazonfresh', {force:true})
         cy.get(this.mainSearchInput).type(item);
+        cy.clearAllCookies();
         cy.get(this.mainSearchIcon).click();
         cy.get(this.amazonFreshLogo).should('be.visible');
         cy.xpath(this.searchItemsResult).first().click();

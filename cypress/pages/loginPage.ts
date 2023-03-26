@@ -22,8 +22,6 @@ submitLogin(header: string, loginEmail: string, loginPassword:string): void {
     cy.get(this.loginSubmitBtn).click();
     cy.wait(1000);
 }
-
-
 }
 
 export const LoginPage = new Login();
