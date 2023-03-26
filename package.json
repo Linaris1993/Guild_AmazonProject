@@ -1,0 +1,19 @@
+{
+  "name": "guild_amazonproject",
+  "version": "1.0.0",
+  "description": "Cypress TS Project for Guild Education",
+  "main": "index.js",
+  "scripts": {
+    "runner": "cypress open --e2e --browser chrome"
+  },
+  "author": "Lina Khatmullina",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.8.1",
+    "cypress-xpath": "^2.0.1",
+    "typescript": "^5.0.2"
+  },
+  "dependencies": {
+    "@cypress/xpath": "^2.0.3"
+  }
+}
