@@ -20,9 +20,7 @@ describe('Verify shopping in Amazon Fresh is eligible only for accounts with Pri
         LoginPage.submitLogin(signInH1Text, validLoginCredentials.userLoginEmail, validLoginCredentials.userLoginPassword);
         HomePage.amazonLabelElement.should('be.visible');
         LoginPage.loggedInAcctInfoBasePageElement.should('have.text', `Hello, ${validLoginCredentials.userFirstName}`);
-        })
-
-        OrderFlowPage.OrderFlowFromMainDropdown('Fresh Brand - All Butter Mini Croissants');
+        OrderFlowPage.OrderFlowFromMainDropdown('Fresh Brand - Butter Croissants (4ct)');
         OrderFlowPage.bannerElements(" \n\n\n    FREE 2-hour delivery on orders over $150\n with Prime\n\n\n ").should('be.visible');
         OrderFlowPage.bannerElements("To add to cart, join Prime").should('be.visible');
         OrderFlowPage.bannerElements("A Prime membership is required to shop Amazon Fresh on Amazon.").should('be.visible');
@@ -30,5 +28,6 @@ describe('Verify shopping in Amazon Fresh is eligible only for accounts with Pri
         OrderFlowPage.joinPrimeBtnElement.should('be.visible');
         OrderFlowPage.bannerElements(" Cancel Anytime ").should('be.visible');
     })    
+})   
 })
 })

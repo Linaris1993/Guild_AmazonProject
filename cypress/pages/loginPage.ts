@@ -1,6 +1,6 @@
 import { HomePage } from "./basePage";
 
-class Login{
+class Login {
     acctInfoBasePage: string = '#nav-link-accountList';
     userLoginEmailInput: string = 'input[id="ap_email"]';
     loginContinueBtn: string = 'input[id="continue"]';
